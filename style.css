@@ -1,0 +1,111 @@
+/* cores base que serão usadas*/
+:root {
+    /* cores extraídas da logo poco Loco */
+    --color-poco-red: #D01C1C;
+    --color-poco-yellow: #FFC810;
+    --color-poco-green: #45D03D;
+    --color-poco-navy: #1A2A54;
+    --color-poco-pink: #FF5C9C;
+    
+    /* Cores de apoio */
+    --color-text-body: #333333;
+    --color-bg-light: #FAFAFA;
+    --color-white: #FFFFFF;
+
+    /* fonte */
+    --font-title: 'Titan One', cursive;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* tira as margens e bordas da pagina */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* deixa os efeitos de rolagem e clique de botões mais suave */
+    scroll-behavior: smooth;
+}
+/* fundo  */
+body {
+    font-family: var(--font-body);
+    color: var(--color-text-body);
+    background-color: var(--color-bg-light);
+}
+
+/* estrutura tamanho dos blocos*/
+.bloco {
+    /* Altura mínima de 100vh significa 100% da altura da tela (View Height) */
+    min-height: 100vh; 
+    padding: 100px 5%; /* 100px no topo/baixo compensa o cabeçalho fixo, 5% nas laterais */
+}
+
+/* posição cabeçalho no pc */
+#cabecalho {
+    position: fixed; /* Fixa no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Garante que fique por cima dos outros elementos */
+}
+
+/* Aqui configuraremos o display flex do cabeçalho no próximo passo */
+
+
+/* =========================================
+   4. MEDIA QUERIES (Responsividade Celular)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Todas as adaptações para telas menores entrarão aqui depois */
+}
+/* =========================================
+   ESTILIZAÇÃO VISUAL DO CABEÇALHO (FLEXBOX)
+   ========================================= */
+
+/* O container segura a logo e o menu */
+.container-header {
+    display: flex; /* Ativa o Flexbox, colocando os itens lado a lado */
+    justify-content: space-between; /* Joga a logo para a esquerda extrema e o menu para a direita extrema */
+    align-items: center; /* Alinha tudo verticalmente no centro */
+    max-width: 1200px; /* Limita a largura máxima para não esticar demais em monitores gigantes */
+    margin: 0 auto; /* Centraliza o container na tela */
+    padding: 15px 5%; /* Espaçamento interno (15px em cima/embaixo, 5% nas laterais) */
+}
+
+/* Ajustando o tamanho da sua Logo Poco Loco */
+.logo img {
+    height: 80px; /* Define uma altura fixa profissional para o cabeçalho */
+    width: auto; /* Mantém a proporção da imagem para não distorcer */
+    transition: transform 0.3s ease; /* Prepara uma animação suave */
+}
+
+/* Efeito ao passar o mouse na logo */
+.logo img:hover {
+    transform: scale(1.05); /* Aumenta a logo em 5% sutilmente */
+}
+
+/* Configuração da lista do menu */
+.menu-navegacao ul {
+    list-style: none; /* Remove as bolinhas pretas da lista */
+    display: flex; /* Coloca os links lado a lado */
+    gap: 30px; /* Cria um espaçamento de 30px entre cada link */
+}
+
+/* Configuração do texto dos links */
+.menu-navegacao a {
+    text-decoration: none; /* Remove o sublinhado azul padrão dos links */
+    color: var(--color-poco-navy); /* Usa o azul marinho da sua logo para o texto */
+    font-family: var(--font-title); /* Usa a fonte Titan One para dar personalidade */
+    font-size: 1.1rem; /* Tamanho da fonte um pouco maior que o padrão */
+    letter-spacing: 1px; /* Espaçamento sutil entre as letras */
+    transition: color 0.3s ease; /* Animação suave para a troca de cor */
+}
+
+/* Efeito ao passar o mouse nos links (Hover) */
+.menu-navegacao a:hover {
+    color: var(--color-poco-red); /* Muda para o vermelho pimenta da sua logo */
+}
