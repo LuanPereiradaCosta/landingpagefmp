@@ -185,7 +185,7 @@ body {
     animation-delay: 4s;
 }
 .slide3{
-    background-image: url(assets/img/burrito_brasil.jpg);
+    background-image: url(assets/img/burrito_classico.jpg);
     animation-delay: 8s;
 }
 .slide4{
@@ -245,7 +245,7 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 30px;
     font-size: 1rem;
     letter-spacing: 1px;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -256,5 +256,12 @@ body {
     transform: scale(1.05);
 }
 @media (max-width: 768px) {
-
+    /* Ajustes específicos para a Hero Section no Celular */
+    .container-hero h1 {
+        font-size: 2.5rem; /* Diminui o tamanho do título para caber na tela do celular */
+    }
+    
+    .container-hero p {
+        font-size: 1rem; /* Diminui levemente o texto */
+    }
 }
