@@ -51,8 +51,8 @@ body {
     background-color: var(--color-white);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000; /* Garante que fique por cima dos outros elementos */
+    transition: all 0.3s ease; /* Prepara animações suaves no cabeçalho inteiro */
 }
-
 /* Aqui configuraremos o display flex do cabeçalho no próximo passo */
 
 
@@ -77,15 +77,39 @@ body {
 }
 
 /* Ajustando o tamanho da sua Logo Poco Loco */
-.logo img {
-    height: 80px; /* Define uma altura fixa profissional para o cabeçalho */
-    width: auto; /* Mantém a proporção da imagem para não distorcer */
-    transition: transform 0.3s ease; /* Prepara uma animação suave */
+/* O link <a> dentro do brand-group agora também é um Flex Container */
+.brand-group a {
+    display: flex; /* Coloca a logo e o texto lado a lado */
+    align-items: center; /* Centraliza verticalmente a logo e o texto */
+    text-decoration: none; /* Remove sublinhado padrão do link */
+    gap: 40px; /* Cria um espaçamento de 15px entre a logo e o texto */
 }
 
-/* Efeito ao passar o mouse na logo */
-.logo img:hover {
-    transform: scale(1.05); /* Aumenta a logo em 5% sutilmente */
+/* Ajustando o tamanho da sua Logo Poco Loco */
+.brand-group img {
+    height: 100px; /* Reduzi um pouco a altura para equilibrar com o texto ao lado */
+    width: auto; /* Mantém a proporção */
+    transition: transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse apenas na imagem da logo */
+.brand-group a:hover img {
+    transform: scale(1.10); /* Aumenta a logo em 5% sutilmente */
+}
+
+/* ESTILIZAÇÃO DO NOME AO LADO DA LOGO */
+.brand-name {
+    font-family: var(--font-title); /* Usamos Poppins (fonte profissional de corpo) para diferenciar do menu */
+    font-weight: 500; /* Deixamos a fonte bem grossa (semi-bold) */
+    font-size: 1.5rem; /* Tamanho grande para dar destaque */
+    color: var(--color-poco-navy); /* Usamos o Azul Marinho da logo para sobriedade e profissionalismo */
+    letter-spacing: -1px; /* Aproxima um pouco as letras para um visual mais moderno de marca */
+    text-transform: uppercase; /* Deixa tudo em MAIÚSCULO para impactar */
+}
+
+/* Garante que o nome NÃO mude de cor ao passar o mouse, para não parecer um item de menu comum */
+.brand-group a:hover .brand-name {
+    color: var(--color-poco-navy); /* Mantém a cor original */
 }
 
 /* Configuração da lista do menu */
@@ -95,17 +119,17 @@ body {
     gap: 30px; /* Cria um espaçamento de 30px entre cada link */
 }
 
-/* Configuração do texto dos links */
+/* Configuração do texto dos links do menu */
 .menu-navegacao a {
-    text-decoration: none; /* Remove o sublinhado azul padrão dos links */
-    color: var(--color-poco-navy); /* Usa o azul marinho da sua logo para o texto */
-    font-family: var(--font-title); /* Usa a fonte Titan One para dar personalidade */
-    font-size: 1.1rem; /* Tamanho da fonte um pouco maior que o padrão */
-    letter-spacing: 1px; /* Espaçamento sutil entre as letras */
+    text-decoration: none; /* Remove o sublinhado */
+    color: var(--color-text-body); /* Usamos a cor padrão de texto, mais suave que o Navy */
+    font-family: var(--font-title); /* Usa a fonte Titan One para dar personalidade de menu mexicano */
+    font-size: 1.1rem;
+    letter-spacing: 1px;
     transition: color 0.3s ease; /* Animação suave para a troca de cor */
 }
 
-/* Efeito ao passar o mouse nos links (Hover) */
+/* Efeito ao passar o mouse nos links do menu (Hover) */
 .menu-navegacao a:hover {
-    color: var(--color-poco-red); /* Muda para o vermelho pimenta da sua logo */
+    color: var(--color-poco-green); /* Muda para o vermelho pimenta apenas nos links do menu */
 }
