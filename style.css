@@ -255,13 +255,54 @@ body {
     background-color: #f22a2a;
     transform: scale(1.05);
 }
-@media (max-width: 768px) {
-    /* Ajustes específicos para a Hero Section no Celular */
+
+@media (max-width: 850px) {
+
+    /* 1. Transforma o cabeçalho de Linha para Coluna empilhada */
+    .container-header {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px; /* Espaço entre a logo e o menu */
+    }
+
+    /* 2. Diminui a Logo e o Nome */
+    .brand-group img {
+        height: 60px;
+    }
+    .brand-name {
+        font-size: 1.5rem;
+    }
+
+    /* 3. Tira o menu da posição absoluta e centraliza ele de forma natural */
+    .menu-navegacao {
+        position: relative;
+        left: auto;
+        transform: none;
+    }
+
+    /* 4. Permite que os links do menu quebrem de linha se não couberem */
+    .menu-navegacao ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px; /* Diminui o espaço entre os links */
+    }
+
+    /* 5. Esconde os ícones no topo (vão ficar apenas no rodapé no celular) */
+    .contato-header {
+        display: none;
+    }
+
+    /* 6. Como o cabeçalho empilhado ficou mais "alto", aumentamos o respiro do topo dos blocos */
+    .bloco {
+        padding-top: 160px;
+    }
+
+    /* 7. Ajustes do Título da Hero Section que fizemos antes */
     .container-hero h1 {
-        font-size: 2.5rem; /* Diminui o tamanho do título para caber na tela do celular */
+        font-size: 2.5rem; 
     }
     
     .container-hero p {
-        font-size: 1rem; /* Diminui levemente o texto */
+        font-size: 1rem;
     }
 }
