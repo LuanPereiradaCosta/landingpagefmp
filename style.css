@@ -53,43 +53,30 @@ body {
     z-index: 1000; /* Garante que fique por cima dos outros elementos */
     transition: all 0.3s ease; /* Prepara animações suaves no cabeçalho inteiro */
 }
-/* Aqui configuraremos o display flex do cabeçalho no próximo passo */
-
-
-/* =========================================
-   4. MEDIA QUERIES (Responsividade Celular)
-   ========================================= */
-@media (max-width: 768px) {
-    /* Todas as adaptações para telas menores entrarão aqui depois */
-}
-/* =========================================
-   ESTILIZAÇÃO VISUAL DO CABEÇALHO (FLEXBOX)
-   ========================================= */
-
 /* O container segura a logo e o menu */
 .container-header {
-    display: flex; /* Ativa o Flexbox, colocando os itens lado a lado */
-    justify-content: space-between; /* Joga a logo para a esquerda extrema e o menu para a direita extrema */
-    align-items: center; /* Alinha tudo verticalmente no centro */
-    max-width: 1200px; /* Limita a largura máxima para não esticar demais em monitores gigantes */
-    margin: 0 auto; /* Centraliza o container na tela */
-    padding: 15px 5%; /* Espaçamento interno (15px em cima/embaixo, 5% nas laterais) */
+    display: flex; 
+    align-items: center; /* Mantém tudo alinhado verticalmente no centro */
+    position: relative; /* FUNDAMENTAL: Cria um ponto de referência para o menu absoluto */
+    justify-content: space-between;
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 10px 40px; 
 }
-
 /* Ajustando o tamanho da sua Logo Poco Loco */
 /* O link <a> dentro do brand-group agora também é um Flex Container */
 .brand-group a {
-    display: flex; /* Coloca a logo e o texto lado a lado */
-    align-items: center; /* Centraliza verticalmente a logo e o texto */
-    text-decoration: none; /* Remove sublinhado padrão do link */
-    gap: 40px; /* Cria um espaçamento de 15px entre a logo e o texto */
+    display: flex; 
+    align-items: center; 
+    text-decoration: none; 
+    gap: 55px; 
 }
 
-/* Ajustando o tamanho da sua Logo Poco Loco */
+/* Ajustando o tamanho da Logo Poco Loco */
 .brand-group img {
-    height: 100px; /* Reduzi um pouco a altura para equilibrar com o texto ao lado */
-    width: auto; /* Mantém a proporção */
-    transition: transform 0.3s ease;
+    height: 100px; /*altura */
+    width: auto; /* proporção */
+    transition: transform 0.3s ease; 
 }
 
 /* Efeito ao passar o mouse apenas na imagem da logo */
@@ -99,12 +86,12 @@ body {
 
 /* ESTILIZAÇÃO DO NOME AO LADO DA LOGO */
 .brand-name {
-    font-family: var(--font-title); /* Usamos Poppins (fonte profissional de corpo) para diferenciar do menu */
-    font-weight: 500; /* Deixamos a fonte bem grossa (semi-bold) */
-    font-size: 1.5rem; /* Tamanho grande para dar destaque */
-    color: var(--color-poco-navy); /* Usamos o Azul Marinho da logo para sobriedade e profissionalismo */
-    letter-spacing: -1px; /* Aproxima um pouco as letras para um visual mais moderno de marca */
-    text-transform: uppercase; /* Deixa tudo em MAIÚSCULO para impactar */
+    font-family: var(--font-title); /* fonte */
+    font-weight: 500; /* grossura da fonte */
+    font-size: 2.0rem; /* Tamanho da fonte */
+    color: var(--color-poco-navy);
+    letter-spacing: -1px; /* aproxima as letras */
+    text-transform: uppercase; /* Deixa tudo em MAIÚSCULO */
 }
 
 /* Garante que o nome NÃO mude de cor ao passar o mouse, para não parecer um item de menu comum */
@@ -112,6 +99,11 @@ body {
     color: var(--color-poco-navy); /* Mantém a cor original */
 }
 
+.menu-navegacao {
+    position: absolute; 
+    left: 50%; /* Empurra o início do menu exatamente para o meio da tela */
+    transform: translateX(-50%); /* Puxa o menu de volta pela metade do seu próprio tamanho, cravando-o no centro exato */
+}
 /* Configuração da lista do menu */
 .menu-navegacao ul {
     list-style: none; /* Remove as bolinhas pretas da lista */
@@ -122,14 +114,147 @@ body {
 /* Configuração do texto dos links do menu */
 .menu-navegacao a {
     text-decoration: none; /* Remove o sublinhado */
-    color: var(--color-text-body); /* Usamos a cor padrão de texto, mais suave que o Navy */
-    font-family: var(--font-title); /* Usa a fonte Titan One para dar personalidade de menu mexicano */
+    color: var(--color-text-body);
+    font-family: var(--font-title);
     font-size: 1.1rem;
     letter-spacing: 1px;
     transition: color 0.3s ease; /* Animação suave para a troca de cor */
 }
 
-/* Efeito ao passar o mouse nos links do menu (Hover) */
+/* Efeito ao passar o mouse nos links do menu */
 .menu-navegacao a:hover {
-    color: var(--color-poco-green); /* Muda para o vermelho pimenta apenas nos links do menu */
+    color: var(--color-poco-green); /* quando passa o mouse por cima muda ppara verde */
+}
+.contato-header{ /* posição dos icones do cabeçalho */
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-right: 120px;
+}
+.icon-link{ /* cor deles no modo padrao */
+    color: var(--color-poco-navy);
+    font-size: 1.4rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.icon-link.link-instagram:hover{ /* cor de cada icone quando passa por cima */
+    color: rgb(128, 0, 109);
+    transform: translateY(-5px);
+}
+.icon-link.link-localizacao:hover{
+    color: var(--color-poco-red);
+    transform: translateY(-5px);
+}
+.icon-link.link-whatsapp:hover{
+    color: var(--color-poco-green);
+    transform: translateY(-5px);
+}
+#inicio {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-white);
+    padding: 0;
+    overflow: hidden; /* para a imagem nao sair do bloco */
+
+}
+.slideshow{ /* posição aonde vai passar imagens */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* deixa atras de tudo */
+}
+.slide{ /* config padrao das fotos */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fadeCss 20s infinite;
+}
+.slide1{
+    background-image: url(assets/img/combo_especial.jpg);
+    animation-delay: 0s;
+}
+.slide2{
+    background-image: url(assets/img/botana.jpg);
+    animation-delay: 4s;
+}
+.slide3{
+    background-image: url(assets/img/burrito_brasil.jpg);
+    animation-delay: 8s;
+}
+.slide4{
+    background-image: url(assets/img/guacamole.jpg);
+    animation-delay: 12s;
+}
+.slide5{
+    background-image: url(assets/img/nachosG.jpg);
+    animation-delay: 16s;
+}
+@keyframes fadeCss {
+    0%   { opacity: 0; } /* Começa transparente */
+    5%  { opacity: 1; } /* Aparece suavemente */
+    20%  { opacity: 1; } /* Fica visível na tela */
+    25%  { opacity: 0; } /* Some suavemente para a próxima foto entrar */
+    100% { opacity: 0; } /* Fica escondida até o ciclo recomeçar */
+}
+.hero-overlay { /* pelicula que fica por cima das fotos */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Preto com 60% de opacidade */
+    z-index: 1; /* Fica acima das imagens do slideshow, mas abaixo do texto */
+}
+.container-hero { /* limitando o texto */
+    position: relative;
+    z-index: 2; /* Fica acima da película escura */
+    max-width: 800px; /* Limita a largura do texto para não esticar demais */
+    padding: 0 20px; /* Respiro nas laterais em telas menores */
+}
+.container-hero h1 { /* estilo do titulo do texto*/
+    font-family: var(--font-title);
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.container-hero p { /* estilo do texto */
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-poco-red);
+    color: var(--color-white);
+    padding: 15px 40px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(208, 28, 28, 0.4);
+}
+.btn-primary:hover {
+    background-color: #f22a2a;
+    transform: scale(1.05);
+}
+@media (max-width: 768px) {
+
 }

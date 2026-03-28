@@ -10,34 +10,62 @@
     <!-- importando fontes de fora do vs code-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Titan+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!--link dos icones de apps-->
 </head>
 <body>
-    <!-- aonde vai ficar tudo dentro do cabeçalho-->
+    <!-- aonde cria a cabeça do site -->
     <header id="cabecalho">
         <div class="container-header"> <!--posicionamento logo-->
             <div class="brand-group">
-                <a href="#inicio"> <!--referencia o cabeçalho para quando clicar no menu--> 
+                <a href="#inicio"> <!--referencia o cabeçalho para quando clicar no logo--> 
                     <img src="assets/logo/logo_poco.png" alt="Logo Poco Loco">
                     <span class="brand-name">Poco Loco</span>
                 </a>
             </div>
             <!-- class para colocar o estilo, cor e posicionamento -->
             <nav class="menu-navegacao"> <!-- nav para poder colocar referencias para navegação--> 
-                <ul> <!-- para criar uma lista-->
+                <ul> <!-- para criar uma lista referenciando as sessoes-->
                     <li><a href="#historia">História</a></li> <!-- posição da lista-->
-                    <li><a href="#inspiracao">Inspiração</a></li>
+                    <li><a href="#inspiracao">Inspiração</a></li> <!-- a # é para procurar por um ID-->
                     <li><a href="#nossa-casa">Nossa Casa</a></li>
-                    <li><a href="#cardapio">Cardápio</a></li>
+                    <li><a href="#menu">Menu</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
+            <div class="contato-header">
+                <a href="#contato" class="icon-link link-instagram">
+                    <i class="fa-brands fa-instagram"></i> <!--classe puxada da biblioteca <i> para colocar icone--> 
+                </a>
+                <a href="#contato" class="icon-link link-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="#contato" class="icon-link link-localizacao">
+                    <i class="fa-solid fa-location-dot"></i>
+                </a>
+
+            </div>
         </div>
     </header>
 
-    <main>
+    <main> <!-- aqui cria corpo (parte principal) do site -->
+        
+        <!-- sessões aonde bota o tema de cada -->
         <section id="inicio" class="bloco">
-            </section>
+            <div class="slideshow">
+                <div class="slide slide1"></div>
+                <div class="slide slide2"></div>
+                <div class="slide slide3"></div>
+                <div class="slide slide4"></div>
+                <div class="slide slide5"></div>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container-hero">
+                <h1>Poco Loco</h1>
+                <p>Poco Loco</p>
+                <a href="#menu" class="btn-primary">Menu</a>
+            </div>
 
+            </section> 
         <section id="historia" class="bloco">
             </section>
 
@@ -47,7 +75,7 @@
         <section id="nossa-casa" class="bloco">
             </section>
 
-        <section id="cardapio" class="bloco">
+        <section id="menu" class="bloco">
             </section>
     </main>
 
