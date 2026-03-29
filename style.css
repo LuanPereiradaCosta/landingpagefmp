@@ -174,11 +174,11 @@ body {
     background-size: cover;
     background-position: center;
     opacity: 0;
-    animation: fadeCss 20s infinite;
+    animation: fadeCss 20s infinite; /*duração da animacção criada, infinite para sempre repetir */
 }
 .slide1{
-    background-image: url(assets/img/combo_especial.jpg);
-    animation-delay: 0s;
+    background-image: url(assets/img/combo_especial.jpg); /* imagem q vai passar nos slides */
+    animation-delay: 0s /* em qual momento da duração da animação a foto aparece*/
 }
 .slide2{
     background-image: url(assets/img/botana.jpg);
@@ -196,7 +196,7 @@ body {
     background-image: url(assets/img/nachosG.jpg);
     animation-delay: 16s;
 }
-@keyframes fadeCss {
+@keyframes fadeCss { /* em qual duração é a animação e qual a opacidade*/
     0%   { opacity: 0; } /* Começa transparente */
     5%  { opacity: 1; } /* Aparece suavemente */
     20%  { opacity: 1; } /* Fica visível na tela */
@@ -249,11 +249,310 @@ body {
     font-size: 1rem;
     letter-spacing: 1px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 15px rgba(208, 28, 28, 0.4);
+    box-shadow: 0 4px 15px rgba(208, 28, 28, 0.4); /* sombra do botao */
 }
 .btn-primary:hover {
     background-color: #f22a2a;
     transform: scale(1.05);
+}
+
+
+#historia {
+    background-color: #FFFAF0; 
+    
+    /* Uma bordinha sutil na parte de baixo para separar do próximo bloco */
+    border-bottom: 1px solid #F0E6D2;
+}
+
+.container-historia {
+    display: flex;
+    align-items: center; /* Centraliza a foto e o texto verticalmente */
+    justify-content: space-between; /* Empurra um para cada lado */
+    gap: 60px; /* Cria um espaço (respiro) entre a foto e o texto */
+    max-width: 1100px; /* Limita a largura para o texto não ficar super esticado em telas grandes */
+    margin: 0 auto; /* Centraliza a caixa inteira no meio da tela */
+}
+
+/* Lado da Imagem (50% do espaço) */
+.historia-img {
+    flex: 1; 
+}
+
+.historia-img img {
+    width: 100%; /* A imagem vai preencher todo o espaço que derem para ela */
+    border-radius: 15px; /* Bordas arredondadas e modernas */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra suave para a foto "saltar" da tela */
+}
+
+/* Lado do Texto (50% do espaço) */
+.historia-texto {
+    flex: 1; 
+}
+
+.historia-texto h2 {
+    font-family: var(--font-title);
+    color: var(--color-poco-navy);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Truque de Design: Pintar apenas uma palavra do título com a cor do restaurante */
+.historia-texto h2 span {
+    color: var(--color-poco-red);
+}
+
+.historia-texto p {
+    font-size: 1.1rem;
+    line-height: 1.8; /* Aumenta o espaço entre as linhas (fica muito mais fácil e chique de ler) */
+    color: var(--color-text-body);
+    margin-bottom: 20px;
+}
+
+#nossa-casa {
+    background-color: var(--color-bg-light);
+}
+
+/* Reutilizando o estilo de título */
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo-secao h2 {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    color: var(--color-poco-navy);
+    text-transform: uppercase;
+}
+
+.titulo-secao span {
+    color: var(--color-poco-red);
+}
+
+.titulo-secao p {
+    font-size: 1.2rem;
+    color: var(--color-text-body);
+    margin-top: 10px;
+}
+
+/* Container das 3 fotos */
+.galeria-casa {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo de cada foto */
+.foto-casa {
+    flex: 1; /* Divide o espaço igualmente entre as 3 fotos */
+    width: 100%;
+    height: 350px; /* Altura fixa para todas ficarem alinhadas */
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+/* Efeito de Zoom ao passar o mouse */
+.foto-casa:hover {
+    transform: scale(1.05); /* Dá um zoom de 5% */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* Aumenta a sombra */
+    z-index: 10; /* Garante que a foto com zoom fique por cima das outras */
+}
+
+/* =========================================
+   8. BLOCO MENU (Cardápio) - Desktop
+   ========================================= */
+
+#menu {
+    background-color: var(--color-white); /* Fundo branco para contrastar com os blocos cinzas */
+}
+
+.container-menu {
+    max-width: 1200px; /* Largura máxima maior para caber o cardápio */
+    margin: 0 auto;
+}
+
+/* A caixa que segura o cardápio inteiro */
+.menu-grid {
+    display: grid;
+    
+    /* Cria 3 colunas idênticas (1fr significa "uma fração do espaço disponível") */
+    grid-template-columns: repeat(3, 1fr); 
+    
+    gap: 40px; /* Espaço entre as linhas e colunas (respiro entre os pratos) */
+}
+
+/* Estilo do Card individual de cada prato */
+.menu-item {
+    background: #FFF;
+    border-radius: 15px;
+    overflow: hidden; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    
+    /* linha de borda */
+    border: 2px solid rgb(0, 0, 0); 
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+}
+
+
+/* Efeito de levitar o card quando passa o mouse */
+.menu-item:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 35px rgba(208, 28, 28, 0.15);
+    border-color: var(--color-poco-green);
+}
+
+/* Estilo da Foto do Prato */
+.prato-img {
+    width: 100%;
+    height: 250px; /* Altura fixa para alinhar todos os cards */
+    object-fit: cover; /* Mágica do cover: não amassa a foto! */
+}
+
+/* Container do texto do prato */
+.menu-item-info {
+    padding: 25px;
+}
+
+.menu-item h3 {
+    font-family: var(--font-title);
+    color: var(--color-poco-navy);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    color: var(--color-text-body);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    
+    height: 4.5em; /* 3 linhas de 1.5 de line-height */
+    overflow: hidden;
+}
+
+/* Estilo do Preço */
+.menu-price {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--color-poco-red); /* Vermelho Pimenta Poco Loco */
+    font-size: 1.2rem;
+    display: block; /* O preço ocupa a linha toda */
+}
+
+.rodape {
+    /* Forçando o fundo escuro e adicionando uma linha de borda sutil no topo */
+    background-color: #1A1A24; 
+    border-top: 5px solid var(--color-poco-red); /* Uma linha vermelha Poco Loco para dividir! */
+    color: #FFFFFF;
+    padding-top: 60px;
+}
+
+.container-rodape {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* Divide o rodapé em 3 colunas iguais */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px;
+    padding: 0 20px 40px 20px;
+}
+
+.rodape-coluna h3 {
+    color: var(--color-poco-red, #D01C1C);
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.rodape-coluna p {
+    color: #CCCCCC; /* Cinza claro para não cansar a vista no fundo escuro */
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* Coluna 1: Logo e Marca */
+.rodape-logo {
+    font-family: var(--font-title);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+.rodape-logo span {
+    color: var(--color-poco-red, #D01C1C);
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.redes-sociais a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.redes-sociais a:hover {
+    transform: translateY(-3px);
+}
+
+/* Coluna 2: Links e Ícones */
+.rodape-coluna i {
+    color: var(--color-white);
+    margin-right: 8px;
+    width: 15px;
+    text-align: center;
+}
+
+.link-mapa {
+    display: inline-block;
+    color: var(--color-poco-red);
+    margin-top: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-mapa:hover {
+    color: var(--color-white);
+}
+
+/* Coluna 3: Horários */
+.horarios strong { /* deixa em negrito */
+    color: var(--color-white);
+}
+.fechado {
+    color: var(--color-poco-red) !important;
+    margin-top: 15px;
+}
+
+/* Barra inferior de Direitos Autorais */
+.rodape-direitos {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.3); /* Escurece um pouco mais o finalzinho */
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.rodape-direitos p {
+    color: #888888;
+    font-size: 0.85rem;
+    margin: 0;
 }
 
 @media (max-width: 850px) {
@@ -262,7 +561,7 @@ body {
     .container-header {
         flex-direction: column;
         padding: 15px;
-        gap: 15px; /* Espaço entre a logo e o menu */
+        gap: 5px; /* Espaço entre a logo e o menu */
     }
 
     /* 2. Diminui a Logo e o Nome */
@@ -304,5 +603,46 @@ body {
     
     .container-hero p {
         font-size: 1rem;
+    }
+    .container-historia {
+        flex-direction: column; /* Empilha: a foto vai para cima e o texto para baixo */
+        gap: 30px;
+        text-align: center; /* Centraliza o texto para ficar mais bonito no celular */
+    }
+
+    .historia-texto h2 {
+        font-size: 2.2rem; /* Diminui um pouco o título para não vazar da tela */
+    }
+    
+    .galeria-casa {
+        flex-direction: column; /* Empilha as fotos */
+        padding: 0 20px;
+    }
+
+    .foto-casa {
+        height: 250px; /* Diminui um pouco a altura para caber melhor na tela do celular */
+    }
+
+    .menu-grid {
+        /* Muda de 3 colunas para 2 colunas */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+    
+    .container-rodape {
+        grid-template-columns: 1fr; /* Transforma as 3 colunas em 1 só */
+        text-align: center; /* Centraliza tudo no celular (fica mais elegante) */
+        gap: 40px;
+    }
+
+    /* Centraliza os ícones sociais no celular */
+    .redes-sociais {
+        justify-content: center;
+    }   
+}
+@media (max-width: 600px) {
+    .menu-grid {
+        /* Muda de 2 colunas para apenas 1 coluna */
+        grid-template-columns: 1fr; 
     }
 }
